@@ -1,81 +1,163 @@
 # ERP Inventory System - Frontend 🚀
 
-A modern frontend application for an ERP Inventory Management System.
+A modern and scalable frontend application for an **ERP Inventory Management System**.
 
-This project provides a user-friendly interface for managing inventory operations, products, stock movements, and business data through an organized and responsive dashboard.
+This project provides a complete user interface for managing inventory operations, including products, warehouses, purchases, sales, transfers, suppliers, reports, and dashboard analytics.
+
+Built with a modular architecture to ensure maintainability, scalability, and a clean development experience.
 
 ---
 
 ## 📌 Overview
 
-ERP Inventory System Frontend is the client-side application of an Enterprise Resource Planning inventory solution.
+The ERP Inventory System Frontend is the client-side application for an Enterprise Resource Planning inventory solution.
 
-The application is designed to provide an efficient experience for managing:
-
-- Products
-- Categories
-- Inventory Items
-- Stock Operations
-- Users and Roles
-- Dashboard Analytics
+It provides a responsive dashboard with role-based access and integrates with backend APIs to manage daily inventory workflows.
 
 ---
 
 ## ✨ Features
 
-- 🔐 User Authentication
-- 👥 Role-based access control
-- 📦 Product management interface
-- 🏷️ Category management
-- 📊 Inventory dashboard
-- 🔎 Search and filtering
-- 📱 Responsive design
-- ⚡ Fast and modern UI
-- 🔄 API integration with backend services
+### 🔐 Authentication
+- User login system
+- Protected routes
+- Authentication context management
+
+### 📊 Dashboard
+- Inventory statistics
+- Business overview
+- Real-time data visualization
+
+### 📦 Products Management
+- Create and manage products
+- Product information handling
+- Product listing and filtering
+
+### 🏢 Warehouse Management
+- Manage warehouses
+- Track inventory locations
+
+### 🛒 Purchases
+- Create purchase orders
+- View purchase details
+- Manage suppliers
+
+### 💰 Sales
+- Create sales transactions
+- View sales details
+- Track sales operations
+
+### 🔄 Stock Transfers
+- Create inventory transfers
+- Manage warehouse-to-warehouse movements
+
+### 📑 Reports
+- Generate inventory reports
+- View business insights
+
+### 🎨 UI & UX
+- Responsive design
+- Dark/Light theme support
+- Reusable UI components
+- Modern dashboard interface
+
+### ⚡ Real-Time Communication
+- SignalR integration for real-time inventory updates
 
 ---
 
-## 🛠️ Technologies
+# 🛠️ Technologies
+
+## Frontend
 
 - React.js
 - TypeScript
-- HTML5
-- CSS3
+- Vite
+- Tailwind CSS
 - Axios
-- REST API Integration
-- Git & GitHub
+- React Router
+- SignalR Client
+
+## UI Components
+
+- Custom reusable components
+- Shadcn/UI inspired components
+- Radix UI components
+
+## Development Tools
+
+- npm
+- Git
+- GitHub
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
 src/
 │
-├── components/      # Reusable UI components
-├── pages/           # Application pages
-├── services/        # API services
-├── hooks/           # Custom React hooks
-├── assets/          # Images and static files
-├── utils/           # Helper functions
+├── api/                 # API client and endpoints
 │
-└── App.tsx
+├── app/                 # Application root and UI components
+│
+├── components/          # Shared reusable components
+│
+├── context/             # Global contexts
+│   ├── AuthContext.tsx
+│   └── ThemeContext.tsx
+│
+├── features/            # Business modules
+│   ├── categories/
+│   ├── dashboard/
+│   ├── products/
+│   ├── purchases/
+│   ├── reports/
+│   ├── sales/
+│   ├── suppliers/
+│   ├── transfers/
+│   └── warehouses/
+│
+├── hooks/               # Custom React hooks
+│
+├── layouts/             # Application layouts
+│
+├── pages/               # Main pages
+│
+├── routes/              # Routing configuration
+│
+├── services/            # API service layer
+│
+├── signalr/             # Real-time communication
+│
+├── styles/              # Global styles and themes
+│
+├── types/               # TypeScript definitions
+│
+└── utils/               # Helper utilities
 ```
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-### Prerequisites
+## Prerequisites
 
 Make sure you have installed:
 
 - Node.js
 - npm
 
+Check versions:
+
+```bash
+node -v
+npm -v
+```
+
 ---
 
-### Installation
+## Installation
 
 Clone the repository:
 
@@ -95,50 +177,76 @@ Install dependencies:
 npm install
 ```
 
-Run the development server:
-
-```bash
-npm run dev
-```
-
 ---
 
-## 🔗 Backend Integration
+## Environment Configuration
 
-This frontend communicates with the ERP Inventory backend through REST APIs.
-
-Configure your API URL inside the environment configuration:
+Create a `.env` file:
 
 ```
-.env
+VITE_API_URL=your_backend_api_url
 ```
 
 Example:
 
 ```
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=https://localhost:7000/api
 ```
 
 ---
 
-## 🌱 Branches
+## Run Development Server
 
-| Branch | Description |
-|--------|-------------|
-| main | Backend / Main project branch |
-| frontend | Frontend application |
+```bash
+npm run dev
+```
+
+The application will run on:
+
+```
+http://localhost:5173
+```
 
 ---
 
-## 👨‍💻 Author
+# 🔗 Backend Integration
+
+The frontend communicates with the ERP backend through REST APIs.
+
+API communication is organized through:
+
+```
+src/api
+src/services
+```
+
+Real-time updates are handled using:
+
+```
+src/signalr/inventoryHub.ts
+```
+
+---
+
+# 🌱 Branches
+
+| Branch | Description |
+|---|---|
+| main | Main project branch |
+| frontend | React frontend application |
+
+---
+
+# 👨‍💻 Author
 
 **Ayham Kassar**
 
 GitHub:
+
 https://github.com/Ayhamkassar
 
 ---
 
-## 📄 License
+# 📄 License
 
-This project is for educational and development purposes.
+This project is developed for educational and professional purposes.
