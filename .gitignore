@@ -1,0 +1,38 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# NuGet
+packages/
+
+# Secrets
+appsettings.Development.json
+*.env
+
+# SQL LocalDB
+*.mdf
+*.ldf
+
+# Test Results
+TestResults/
+
+# Publish
+publish/
+
+# OS
+.DS_Store
+Thumbs.db

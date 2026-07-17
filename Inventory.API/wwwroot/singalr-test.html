@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SignalR Test</title>
+</head>
+
+<body>
+
+<h2>Inventory Notifications</h2>
+
+<ul id="messages"></ul>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@latest/dist/browser/signalr.min.js"></script>
+
+<script>
+
+const connection =
+new signalR.HubConnectionBuilder()
+.withUrl("http://localhost:5064/inventoryHub")
+.build();
+
+
+connection.on(
+"StockUpdated",
+(data)=>{
+
+let li=document.createElement("li");
+
+li.innerText =
+`Product: ${data.productId}
+ Warehouse: ${data.warehouseId}
+ Quantity: ${data.quantity}`;
+
+document
+.getElementById("messages")
+.appendChild(li);
+
+});
+
+
+connection.on(
+"LowStock",
+(data)=>{
+
+alert(
+"LOW STOCK: "
++ data.quantity
+);
+
+});
+
+
+connection.start()
+.then(()=>console.log("Connected"))
+.catch(err=>console.error(err));
+
+</script>
+
+
+</body>
+</html>
